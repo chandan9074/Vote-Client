@@ -1,0 +1,108 @@
+.privatepoll_style {
+  margin-left: 30vh;
+  margin-top: 10vh;
+  width: 100%;
+}
+
+.privatepoll_flex_style {
+  display: flex;
+  flex-direction: row;
+}
+
+.poll_details {
+  word-wrap: break-word;
+  padding: 5vh;
+  margin: 2vh;
+  background-color: whitesmoke;
+  border-radius: 2vh;
+  box-shadow: 0vh 0vh 2vh rgb(99, 98, 98);
+}
+
+.fix_side {
+  position: fixed;
+}
+
+.details_style {
+  margin: 0;
+  background-color: rgb(219, 213, 213);
+  padding: 2vh;
+  word-wrap: break-word;
+  border-radius: 2vh;
+}
+
+.title_style {
+  font-size: 3.5vh;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.des_style {
+  font-size: 2.5vh;
+  font-weight: bold;
+}
+
+.option_number {
+  border: 1px solid black;
+  padding: 0vh 0.5vh 0vh 0.5vh;
+  border-radius: 0.7vh;
+}
+
+.option_style {
+  margin-left: 1vh;
+  word-wrap: break-word;
+  font-size: 2.5vh;
+}
+
+.option_margin {
+  margin-top: 0px;
+  width: 100%;
+  padding: 2vh;
+  border-radius: 2vh;
+}
+
+.flex_option_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  border-radius: 2.5vh;
+}
+
+.create_btn {
+  background-color: transparent;
+  outline: none;
+  border: 1.5px solid black;
+  margin-right: 3vh;
+  font-size: 3vh;
+  padding: 1.5vh;
+  border-radius: 2vh;
+}
+
+.flex_progess {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2vh;
+}
+
+.align_del_btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+}
+
+.del_btn_style {
+  border: 1.5px solid black;
+  padding: 0.5vh 2.7vh;
+  font-size: 2.5vh;
+  font-weight: bold;
+  font-family: "Domine", serif;
+  letter-spacing: 0.2vh;
+  border-radius: 1vh;
+}
+
+.del_btn_style:hover {
+  background-color: rgb(90, 157, 224);
+}

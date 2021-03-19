@@ -1,0 +1,68 @@
+.aling_dash {
+  display: flex;
+  flex-direction: row;
+}
+
+.private_style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  min-height: 100vh;
+  background-color: rgb(22, 19, 39);
+}
+
+.public_style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  min-height: 100vh;
+  background-color: rgb(90, 157, 224);
+}
+
+.pri_btn {
+  background-color: transparent;
+  outline: none;
+  border: 2px solid rgb(90, 157, 224);
+  color: rgb(90, 157, 224);
+  font-size: 3vh;
+  padding: 2vh;
+  border-radius: 3vh;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: "Domine", serif;
+  letter-spacing: 0.5vh;
+  font-weight: bold;
+}
+
+.pub_btn {
+  background-color: transparent;
+  outline: none;
+  border: 2px solid rgb(22, 19, 39);
+  color: rgb(22, 19, 39);
+  font-size: 3vh;
+  padding: 2vh;
+  font-weight: bold;
+  border-radius: 3vh;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: "Domine", serif;
+  letter-spacing: 0.5vh;
+}
+
+.pri_btn:hover {
+  color: rgb(22, 19, 39);
+  border: none;
+  background: rgb(144, 175, 206);
+  box-shadow: 0 0 10px rgb(144, 175, 206), 0 0 40px rgb(144, 175, 206),
+    0 0 10px rgb(144, 175, 206);
+}
+
+.pub_btn:hover {
+  color: rgb(144, 175, 206);
+  border: none;
+  background: rgb(22, 19, 39);
+  box-shadow: 0 0 10px rgb(22, 19, 39), 0 0 40px rgb(22, 19, 39),
+    0 0 10px rgb(22, 19, 39);
+}
