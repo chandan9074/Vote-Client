@@ -13,6 +13,7 @@ class AllPrivatePollOption extends Component {
             allready_polled: false,
             checked_btn:"",
             check_poll_id:"",
+            shouldProgressBarRerender:true,
         }
     }
 
@@ -48,13 +49,15 @@ class AllPrivatePollOption extends Component {
 
             await axios.post('http://127.0.0.1:8000/votes_api/private_poll_result_view/', option_data, config).then(res=>{
                 if(res.status===200){
-                    this.handlePercent();
+                    // this.handlePercent();
+                    this.setState({shouldProgressBarRerender:true})
+                    x = 1;
                 }
             })
             .catch(function(error){
                 self.setState({allready_polled:false})
                 self.setState({check_poll_id:self.props.poll_id})
-                x = 1;
+                
             })
 
             if (x===0){
@@ -63,6 +66,7 @@ class AllPrivatePollOption extends Component {
             }
         }
         fatch();
+        // this.handleShouldProgressBarRerender(true)
     }
 
     clearSelect=()=>{
@@ -77,6 +81,10 @@ class AllPrivatePollOption extends Component {
         
     }
 
+    handleShouldProgressBarRerender=(value)=>{
+        this.setState({shouldProgressBarRerender:value})
+    }
+
     render() { 
         return ( 
             <div className="options_flex">
@@ -84,7 +92,7 @@ class AllPrivatePollOption extends Component {
                     {this.state.private_poll_options.map((options, index)=>(
                         <div className="flex_progess" key={index}>
                         <p className="option_margin"><input className="radio_carsor" type="radio" id={index} onClick={(e)=>this.handleOptionClick(e)} name="options" value={options.id} /><span className="option_style">{options.option}</span></p>
-                        <PrivateProgressBer   option_id={options.id} poll_id={this.props.poll_id} token={this.props.token.token} />
+                        <PrivateProgressBer handleShouldProgressBarRerender={this.handleShouldProgressBarRerender} shouldProgressBarRerender={this.state.shouldProgressBarRerender}  option_id={options.id} poll_id={this.props.poll_id} token={this.props.token.token} />
                         </div>
                     ))}
                     <div className="warning_flex_style">

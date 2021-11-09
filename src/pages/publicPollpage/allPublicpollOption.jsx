@@ -15,7 +15,10 @@ class AllPublicPollOption extends Component {
             allready_polled: false,
             checked_btn:"",
             check_poll_id:"",
+            shouldProgressBarRerender:true, 
         }
+
+        
     }
 
     componentDidMount(){
@@ -50,7 +53,9 @@ class AllPublicPollOption extends Component {
             }
 
             await axios.post('http://127.0.0.1:8000/votes_api/public_poll_result_view/', option_data, config).then(res=>{
-                this.setState({n:this.state.selected_option})
+                // this.setState({public_poll_options:this.state.selected_option})
+                console.log(res.data)
+                this.setState({shouldProgressBarRerender:true})
             })
             .catch(function(error){
                 self.setState({allready_polled:true})
@@ -58,6 +63,7 @@ class AllPublicPollOption extends Component {
             })
         }
         fatch();
+        // this.handleShouldProgressBarRerender(true)
     }
 
 
@@ -72,6 +78,10 @@ class AllPublicPollOption extends Component {
         this.setState({handle_save:true})        
     }
 
+    setShouldProgressBarRerender=(value)=>{
+        this.setState({shouldProgressBarRerender:value})
+    }
+
 
     render() { 
         return ( 
@@ -80,7 +90,7 @@ class AllPublicPollOption extends Component {
                     {this.state.public_poll_options.map((options, index)=>(
                         <div className="flex_progess">
                             <p className="option_margin"><input type="radio" className="radio_carsor" id={this.props.poll_id+index+options.id} onClick={(e)=>this.handleOptionClick(e)} name="options" value={options.id} /><span className="option_style">{options.option}</span></p>
-                            <PublicProgressBer option_id={options.id} poll_id={this.props.poll_id} token={this.props.token.token} />
+                            <PublicProgressBer setShouldProgressBarRerender={this.setShouldProgressBarRerender} shouldProgressBarRerender={this.state.shouldProgressBarRerender} option_id={options.id} poll_id={this.props.poll_id} token={this.props.token.token} />
                         </div>
                     ))}
                     <div className="warning_flex_style">

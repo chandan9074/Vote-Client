@@ -32,8 +32,9 @@ class PrivateProgressBer extends Component {
                     this.setState({private_poll_options_count:res.data})
                     var y = this.state.private_poll_options_count.length
                     this.setState({private_poll_options_no:y})
-                }).then(this.handleCalc)
+                }).then(()=>{this.handleCalc()})
             })
+            this.props.handleShouldProgressBarRerender?.(false);
         }
 
     handleCalc=()=>{
@@ -44,6 +45,10 @@ class PrivateProgressBer extends Component {
 
 
     render() {   
+        if(this.props.shouldProgressBarRerender){
+            this.fatch();
+        }
+
         return ( 
             <div style={{width:"12vh", height:"12vh", marginLeft:"2vh"}}>
                 <div class="percent">

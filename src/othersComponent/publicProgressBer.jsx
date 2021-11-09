@@ -11,26 +11,30 @@ class PublicProgressBer extends Component {
         allready_polled:false,
      }
 
-    componentWillMount(){
+    componentDidMount(){
+        this.fatch();
+    }
+
+
+    fatch =async () =>{
+
         var config = {
-                headers:{'Authorization':`Token ${this.props.token}`}
-            }
-
-        const fatch = () =>{
-            axios.get(`http://127.0.0.1:8000/votes_api/public_poll_count_view/${this.props.poll_id}/`, config).then(res=>{
-                this.setState({public_poll_count:res.data})
-                var x = this.state.public_poll_count.length
-                this.setState({public_poll_no:x})
-
-                axios.get(`http://127.0.0.1:8000/votes_api/public_poll_option_count_view/${this.props.option_id}/`, config).then(res=>{
-                    this.setState({public_poll_options_count:res.data})
-                    var y = this.state.public_poll_options_count.length
-                    this.setState({public_poll_options_no:y})
-
-                }).then(this.handleCalc)
-            })
+            headers:{'Authorization':`Token ${this.props.token}`}
         }
-        fatch();
+        await axios.get(`http://127.0.0.1:8000/votes_api/public_poll_count_view/${this.props.poll_id}/`, config).then(res=>{
+            this.setState({public_poll_count:res.data})
+            var x = this.state.public_poll_count.length
+            this.setState({public_poll_no:x})
+
+            axios.get(`http://127.0.0.1:8000/votes_api/public_poll_option_count_view/${this.props.option_id}/`, config).then(res=>{
+                this.setState({public_poll_options_count:res.data})
+                var y = this.state.public_poll_options_count.length
+                this.setState({public_poll_options_no:y})
+
+            }).then(()=>{this.handleCalc()})
+        })
+
+        this.props.setShouldProgressBarRerender?.(false);
     }
 
     handleCalc=()=>{
@@ -41,6 +45,10 @@ class PublicProgressBer extends Component {
 
 
     render() { 
+        if(this.props.shouldProgressBarRerender){
+            this.fatch();
+        }
+
         return ( 
             <div style={{width:"12vh", height:"12vh",  marginLeft:"2vh"}}>
                 <div class="percent">
