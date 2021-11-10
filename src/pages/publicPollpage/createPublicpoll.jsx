@@ -54,7 +54,7 @@ class CreatePublicPoll extends Component {
         const fatch=()=>{
             if(p_title!=="" && p_des!=="" && p_time!=="" && this.state.empty_option===false){
 
-            axios.post('http://127.0.0.1:8000/votes_api/public_poll_view/', poll_data, config).then(res=>{
+            axios.post('https://vote-bd.herokuapp.com/votes_api/public_poll_view/', poll_data, config).then(res=>{
                 var result = res.data;
                 var i=0;
                 for(i=0; i<this.state.options.length; i++){
@@ -69,7 +69,7 @@ class CreatePublicPoll extends Component {
                          headers:{'Authorization':`Token ${this.props.location.state.token.token}`}
                     }
                     
-                    axios.post('http://127.0.0.1:8000/votes_api/public_poll_option_view/',option_data, config).then(res=>{
+                    axios.post('https://vote-bd.herokuapp.com/votes_api/public_poll_option_view/',option_data, config).then(res=>{
                         if(i===this.state.options.length){
                             this.setState({poll_done:true})
                         }
@@ -114,7 +114,7 @@ class CreatePublicPoll extends Component {
                     {this.state.invalid?<div class="alert alert-warning" role="alert" style={{fontSize:"1.5vh", padding:"1vh", marginBottom:"1vh"}}>
                             Inavlid input, input everything properly
                             </div>:null}
-                    <button type="submit" onClick={this.savePublicPoll} className="login_btn_style">Submit</button>
+                    <button type="submit" onClick={this.savePublicPoll} className="login_btn_style">Submit <span></span></button>
                 </div>
             </div>
          );

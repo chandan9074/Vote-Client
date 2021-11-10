@@ -13,7 +13,7 @@ class CollectPrivatePollResultData extends Component {
                 headers:{'Authorization':`Token ${this.props.token}`}
             }
         const fatch=()=>{
-            axios.get(`http://127.0.0.1:8000/votes_api/personal_private_poll_result_view/${this.props.poll_id}/`, config).then(response=>{
+            axios.get(`https://vote-bd.herokuapp.com/votes_api/personal_private_poll_result_view/${this.props.poll_id}/`, config).then(response=>{
                 this.setState({personal_private_poll_result:response.data})
             })   
         }

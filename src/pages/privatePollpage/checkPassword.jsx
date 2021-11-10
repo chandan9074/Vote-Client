@@ -21,7 +21,7 @@ class CheckPassword extends Component {
         var poll_data = document.getElementById('pass').value;
         const fatch=()=>{
 
-            axios.get(`http://127.0.0.1:8000/votes_api/private_poll_request_view/${poll_data}/`, config).then(res=>{
+            axios.get(`https://vote-bd.herokuapp.com/votes_api/private_poll_request_view/${poll_data}/`, config).then(res=>{
                 this.setState({private_polls:res.data})
                 this.setState({done:true})
             })

@@ -20,7 +20,7 @@ class AllPublicPoll extends Component {
 
         const fatch=()=>{
 
-            axios.get('http://127.0.0.1:8000/votes_api/public_poll_view/', config).then(res=>{
+            axios.get('https://vote-bd.herokuapp.com/votes_api/public_poll_view/', config).then(res=>{
                 this.setState({public_polls:res.data})
             })
         }

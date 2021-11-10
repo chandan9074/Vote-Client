@@ -28,7 +28,7 @@ class Signup extends Component {
                 headers:{'Content-Type':'application/json'}
             }
             
-            axios.post('http://127.0.0.1:8000/accounts_api/signup/', signupData, config).then(response=> {
+            axios.post('https://vote-bd.herokuapp.com/accounts_api/signup/', signupData, config).then(response=> {
                 if(response.status===200){
                     this.setState({isSignup:true})
                     this.setState({incorrect:false})

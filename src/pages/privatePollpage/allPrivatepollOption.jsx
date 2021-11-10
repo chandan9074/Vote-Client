@@ -23,7 +23,7 @@ class AllPrivatePollOption extends Component {
             }
         
         const fatch=()=>{
-            axios.get(`http://127.0.0.1:8000/votes_api/specific_private_poll_option_view/${this.props.poll_id}/`, config).then(res=>{
+            axios.get(`https://vote-bd.herokuapp.com/votes_api/specific_private_poll_option_view/${this.props.poll_id}/`, config).then(res=>{
                 this.setState({private_poll_options:res.data})
             })
         }
@@ -47,7 +47,7 @@ class AllPrivatePollOption extends Component {
                 user_profile:this.props.token.user_id
             }
 
-            await axios.post('http://127.0.0.1:8000/votes_api/private_poll_result_view/', option_data, config).then(res=>{
+            await axios.post('https://vote-bd.herokuapp.com/votes_api/private_poll_result_view/', option_data, config).then(res=>{
                 if(res.status===200){
                     // this.handlePercent();
                     this.setState({shouldProgressBarRerender:true})

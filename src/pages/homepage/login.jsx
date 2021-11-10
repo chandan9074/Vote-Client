@@ -26,7 +26,7 @@ class Login extends Component {
                 headers:{'Content-Type':'application/json'}
             }
             
-            axios.post('http://127.0.0.1:8000/accounts_api/login/', loginData, config).then(response=> {
+            axios.post('https://vote-bd.herokuapp.com/accounts_api/login/', loginData, config).then(response=> {
                 if(response.status===200){
                     this.setState({token:response.data})
                     this.setState({isLogin:true})

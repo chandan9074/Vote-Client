@@ -22,13 +22,13 @@ class PrivateProgressBer extends Component {
         var config = {
                 headers:{'Authorization':`Token ${this.props.token}`}
             }
-             axios.get(`http://127.0.0.1:8000/votes_api/private_poll_count_view/${this.props.poll_id}/`, config).then(res=>{
+             axios.get(`https://vote-bd.herokuapp.com/votes_api/private_poll_count_view/${this.props.poll_id}/`, config).then(res=>{
 
                 this.setState({private_poll_count:res.data})
                 var x = this.state.private_poll_count.length
                 this.setState({private_poll_no:x})
 
-                 axios.get(`http://127.0.0.1:8000/votes_api/private_poll_option_count_view/${this.props.option_id}/`, config).then(res=>{
+                 axios.get(`https://vote-bd.herokuapp.com/votes_api/private_poll_option_count_view/${this.props.option_id}/`, config).then(res=>{
                     this.setState({private_poll_options_count:res.data})
                     var y = this.state.private_poll_options_count.length
                     this.setState({private_poll_options_no:y})

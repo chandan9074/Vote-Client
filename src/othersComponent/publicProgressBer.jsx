@@ -21,12 +21,12 @@ class PublicProgressBer extends Component {
         var config = {
             headers:{'Authorization':`Token ${this.props.token}`}
         }
-        await axios.get(`http://127.0.0.1:8000/votes_api/public_poll_count_view/${this.props.poll_id}/`, config).then(res=>{
+        await axios.get(`https://vote-bd.herokuapp.com/votes_api/public_poll_count_view/${this.props.poll_id}/`, config).then(res=>{
             this.setState({public_poll_count:res.data})
             var x = this.state.public_poll_count.length
             this.setState({public_poll_no:x})
 
-            axios.get(`http://127.0.0.1:8000/votes_api/public_poll_option_count_view/${this.props.option_id}/`, config).then(res=>{
+            axios.get(`https://vote-bd.herokuapp.com/votes_api/public_poll_option_count_view/${this.props.option_id}/`, config).then(res=>{
                 this.setState({public_poll_options_count:res.data})
                 var y = this.state.public_poll_options_count.length
                 this.setState({public_poll_options_no:y})

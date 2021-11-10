@@ -16,12 +16,12 @@ class VotedPublicPollFinalData extends Component {
 
         const fatch= async()=>{
             
-            await axios.get(`http://127.0.0.1:8000/votes_api/public_poll_details_view/${this.props.publicpoll}/`, config).then(response=>{
+            await axios.get(`https://vote-bd.herokuapp.com/votes_api/public_poll_details_view/${this.props.publicpoll}/`, config).then(response=>{
                 var y = response.data.title
                 this.setState({public_details:y})
             }) 
 
-            await axios.get(`http://127.0.0.1:8000/votes_api/single_public_poll_option_view/${this.props.publicpoll_option}/`, config).then(response=>{
+            await axios.get(`https://vote-bd.herokuapp.com/votes_api/single_public_poll_option_view/${this.props.publicpoll_option}/`, config).then(response=>{
                  this.setState({public_poll_option_details:response.data})
             }) 
         }

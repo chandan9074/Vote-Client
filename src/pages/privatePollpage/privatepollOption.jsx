@@ -15,7 +15,7 @@ class PrivatePollOption extends Component {
             }
     
         const fatch=()=>{
-            axios.get(`http://127.0.0.1:8000/votes_api/specific_private_poll_option_view/${this.props.poll_id}/`, config).then(res=>{
+            axios.get(`https://vote-bd.herokuapp.com/votes_api/specific_private_poll_option_view/${this.props.poll_id}/`, config).then(res=>{
                 this.setState({private_poll_options:res.data})
             })
         }

@@ -14,12 +14,12 @@ class VotedPrivatePollFinalData extends Component {
             }
         const fatch= async()=>{
             
-            await axios.get(`http://127.0.0.1:8000/votes_api/private_poll_details_view/${this.props.privatepoll}/`, config).then(response=>{
+            await axios.get(`https://vote-bd.herokuapp.com/votes_api/private_poll_details_view/${this.props.privatepoll}/`, config).then(response=>{
                 var y = response.data.title
                 this.setState({private_details:y})
             }) 
 
-            await axios.get(`http://127.0.0.1:8000/votes_api/single_private_poll_option_view/${this.props.privatepoll_option}/`, config).then(response=>{
+            await axios.get(`https://vote-bd.herokuapp.com/votes_api/single_private_poll_option_view/${this.props.privatepoll_option}/`, config).then(response=>{
                  this.setState({private_poll_option_details:response.data})
             }) 
         }

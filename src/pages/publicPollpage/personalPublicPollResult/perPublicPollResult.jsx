@@ -14,11 +14,11 @@ class PerPublicPollResult extends Component {
             }
         const fatch= async()=>{
             
-            await axios.get(`http://127.0.0.1:8000/votes_api/user_details_view/${this.props.user_profile}/`, config).then(response=>{
+            await axios.get(`https://vote-bd.herokuapp.com/votes_api/user_details_view/${this.props.user_profile}/`, config).then(response=>{
                 this.setState({user_details:response.data})
             }) 
 
-            await axios.get(`http://127.0.0.1:8000/votes_api/single_public_poll_option_view/${this.props.publicpoll_option}/`, config).then(response=>{
+            await axios.get(`https://vote-bd.herokuapp.com/votes_api/single_public_poll_option_view/${this.props.publicpoll_option}/`, config).then(response=>{
                 this.setState({public_poll_option_details:response.data})
             }) 
         }

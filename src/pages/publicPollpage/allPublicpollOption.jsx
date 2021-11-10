@@ -27,7 +27,7 @@ class AllPublicPollOption extends Component {
             }
         
         const fatch=()=>{
-            axios.get(`http://127.0.0.1:8000/votes_api/specific_public_poll_option_view/${this.props.poll_id}/`, config).then(res=>{
+            axios.get(`https://vote-bd.herokuapp.com/votes_api/specific_public_poll_option_view/${this.props.poll_id}/`, config).then(res=>{
                 this.setState({public_poll_options:res.data})
             })
         }
@@ -52,7 +52,7 @@ class AllPublicPollOption extends Component {
                 user_profile:this.props.token.user_id
             }
 
-            await axios.post('http://127.0.0.1:8000/votes_api/public_poll_result_view/', option_data, config).then(res=>{
+            await axios.post('https://vote-bd.herokuapp.com/votes_api/public_poll_result_view/', option_data, config).then(res=>{
                 // this.setState({public_poll_options:this.state.selected_option})
                 console.log(res.data)
                 this.setState({shouldProgressBarRerender:true})

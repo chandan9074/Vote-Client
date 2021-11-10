@@ -22,7 +22,7 @@ class PublicPoll extends Component {
 
         const fatch=()=>{
 
-            axios.get(`http://127.0.0.1:8000/votes_api/user_public_poll_view/${id}/`, config).then(res=>{
+            axios.get(`https://vote-bd.herokuapp.com/votes_api/user_public_poll_view/${id}/`, config).then(res=>{
                 var result = JSON.parse(JSON.stringify(res.data))
                 this.setState({public_polls:result})
             })
@@ -39,11 +39,11 @@ class PublicPoll extends Component {
         var id = this.props.location.state.token.user_id
         var poll_id = e.target.id
         const del= async()=>{
-            await axios.delete(`http://127.0.0.1:8000/votes_api/user_public_poll_view/${poll_id}/`, config).then(response=>{
+            await axios.delete(`https://vote-bd.herokuapp.com/votes_api/user_public_poll_view/${poll_id}/`, config).then(response=>{
 
             })
 
-            await axios.get(`http://127.0.0.1:8000/votes_api/user_public_poll_view/${id}/`, config).then(res=>{
+            await axios.get(`https://vote-bd.herokuapp.com/votes_api/user_public_poll_view/${id}/`, config).then(res=>{
                 var result = JSON.parse(JSON.stringify(res.data))
                 this.setState({public_polls:result})
             })

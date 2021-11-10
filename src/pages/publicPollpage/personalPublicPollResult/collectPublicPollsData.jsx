@@ -21,7 +21,7 @@ class CollectPublicPollsData extends Component {
 
         const fatch=()=>{
 
-            axios.get(`http://127.0.0.1:8000/votes_api/user_public_poll_view/${id}/`, config).then(res=>{
+            axios.get(`https://vote-bd.herokuapp.com/votes_api/user_public_poll_view/${id}/`, config).then(res=>{
                 var result = JSON.parse(JSON.stringify(res.data))
                 this.setState({public_polls_details:result})
             })
