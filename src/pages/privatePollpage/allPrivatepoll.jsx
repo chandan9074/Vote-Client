@@ -12,8 +12,8 @@ class AllPrivatePoll extends Component {
     state = {  }
     render() { 
         return ( 
-            <div style={{backgroundColor:"rgb(90, 157, 224)", minHeight:"100vh", minWidth:"100vh"}}>
-                <Navbar username={this.props.location.state.token.username} />
+            <div style={{backgroundColor:"", minHeight:"100vh", minWidth:"100vh"}}>
+                <Navbar pageName ="Private Polls" username={this.props.location.state.token.username} />
                 <div className="privatepoll_flex_style">
                     <div className="fix_side">
                         <Sidebar token={this.props.location.state.token} />

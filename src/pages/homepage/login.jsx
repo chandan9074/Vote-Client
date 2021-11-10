@@ -55,8 +55,8 @@ class Login extends Component {
                     {this.state.incorrect?<div class="alert alert-warning" role="alert" style={{transition:"4s"}}>
                             Invalid Username or Password
                             </div>:null}
-                    <button type="submit" onClick={this.hendelLogin} className="login_btn_style">Login</button>
-                    <p style={{marginTop:"1vh"}}>Don't have account? <Link to="/signup" style={{color:"whitesmoke"}}>Singup</Link> </p>
+                    <button type="submit" onClick={this.hendelLogin} className="login_btn_style">Login <span></span></button>
+                    <p style={{marginTop:"1vh"}}>Don't have account? <Link to="/signup" style={{color:"white"}}>Singup</Link> </p>
                 </div>
             </div>
          );

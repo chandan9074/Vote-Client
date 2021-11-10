@@ -30,8 +30,8 @@ class VotedPublicPollData extends Component {
 
     render() { 
         return ( 
-            <div style={{backgroundColor:"rgb(90, 157, 224)", minHeight:"100vh", minWidth:"100vh"}}>
-                <Navbar username={this.props.location.state.token.username} />
+            <div style={{backgroundColor:"", minHeight:"100vh", minWidth:"100vh"}}>
+                <Navbar pageName="Voted Public Poll Results" username={this.props.location.state.token.username} />
                 <div className="publicpoll_flex_style">
                     <div className="fix_side">
                         <Sidebar token={this.props.location.state.token} />

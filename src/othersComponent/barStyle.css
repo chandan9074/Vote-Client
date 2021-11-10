@@ -68,7 +68,7 @@
 .navStyle {
   position: fixed;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 10vh;
@@ -79,14 +79,71 @@
   color: aliceblue;
   margin-top: 0px;
   margin-bottom: 0px;
-  margin-right: 1.5vh;
+  /* margin-right: 1.5vh; */
   font-size: 3vh;
+}
+
+/* logout btn  */
+
+.logout-btn {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #3d405b;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+  padding: 8px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  /* margin: 5px; */
+  margin-left: 20px;
+}
+
+.logout-btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.logout-btn span:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+}
+
+.logout-btn:hover span {
+  padding-right: 15px;
+}
+
+.logout-btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.nav-btn-align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 3%;
+}
+
+.page-title {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  margin-left: 18%;
 }
 
 .nav_vote {
   height: 8vh;
   width: 14vh;
-  margin-right: 26%;
+  /* margin-right: 26%; */
 }
 
 .ul_a:hover {

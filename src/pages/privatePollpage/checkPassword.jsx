@@ -46,7 +46,7 @@ class CheckPassword extends Component {
                     {this.state.incorrect?<div class="alert alert-warning" role="alert" style={{transition:"4s"}}>
                             Invalid Password
                             </div>:null}
-                    <button type="submit" onClick={this.handelpassword} className="login_btn_style">Submit</button>
+                    <button type="submit" onClick={this.handelpassword} className="login_btn_style">Submit <span></span></button>
                 </div>
             </div>
          );

@@ -24,14 +24,31 @@
 }
 
 .btn_style {
-  margin-left: 4vh;
-  background-color: transparent;
-  outline: none;
-  border: 2px solid rgb(182, 206, 241);
-  color: aliceblue;
-  font-size: 2vh;
-  border-radius: 1vh;
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
   cursor: pointer;
+  outline: none;
+  margin-right: 1rem;
+}
+
+.btn_style:hover {
+  background-color: #0c2e44;
+  box-shadow: 0px 15px 20px #144a6e;
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.btn_style:active {
+  transform: translateY(-1px);
 }
 
 .log_pad {
@@ -53,7 +70,13 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  /* background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%); */
+  /* background-color: rgb(236, 244, 248); */
+  background-color: #4c7d9e;
+}
+::placeholder {
+  color: rgb(44, 44, 44);
+  opacity: 1; /* Firefox */
 }
 
 .login_card {
@@ -62,8 +85,8 @@
   flex-direction: column;
   align-items: center;
   border-radius: 7vh 0vh 7vh 0vh;
-  padding: 4vh;
-  box-shadow: 0 0 10vh #13547a;
+  padding: 4vh 10vh;
+  box-shadow: 0 0 1vh rgb(48, 47, 47);
 }
 
 .inpt_style {
@@ -84,15 +107,72 @@
   font-weight: bold;
 }
 
-.login_btn_style {
+/* .login_btn_style {
   outline: none;
   border: 1px solid black;
   font-size: 2.5vh;
   padding: 1vh 10vh 1vh 10vh;
   border-radius: 2vh;
-  background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
+  background-color: black;
+  color: white;
   font-family: "Domine", serif;
   letter-spacing: 0.3vh;
+} */
+
+/* login btn  */
+
+.login_btn_style {
+  border: none;
+  display: block;
+  position: relative;
+  padding: 0.7em 2.4em;
+  font-size: 18px;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  color: rgb(10, 10, 10);
+  z-index: 1;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.login_btn_style span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  border: 4px solid black;
+}
+
+.login_btn_style span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8%;
+  height: 500%;
+  background: var(--lightgray);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-60deg);
+  transition: all 0.3s;
+}
+
+.login_btn_style:hover span::before {
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100%;
+  background: rgb(12, 12, 12);
+}
+
+.login_btn_style:hover {
+  color: white;
+}
+
+.login_btn_style:active span::before {
+  background: #2751cd;
 }
 
 .login_head {

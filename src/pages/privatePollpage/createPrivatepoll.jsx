@@ -117,7 +117,7 @@ class CreatePrivatePoll extends Component {
                     {this.state.invalid?<div class="alert alert-warning" role="alert" style={{fontSize:"1.5vh", padding:"1vh", marginBottom:"1vh"}}>
                             Inavlid input, input everything properly
                             </div>:null}
-                    <button type="submit" onClick={this.savePrivatePoll} className="login_btn_style">Submit</button>
+                    <button type="submit" onClick={this.savePrivatePoll} className="login_btn_style">Submit <span></span></button>
                 </div>
             </div>
          );
